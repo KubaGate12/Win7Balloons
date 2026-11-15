@@ -1,5 +1,5 @@
 # Win7Balloons
--# aka. ManagedShellTest
+aka. ManagedShellTest
 It's a project I started because here is not a single option to restore balloons without the glitchy registry tweak or changing the taskbar itself. Feel free to start an issue, contribute and suggest new features.
 
 Recommended to use with:

@@ -1,0 +1,53 @@
+﻿<Window x:Name="notifWnd" x:Class="ManagedShellTest.NotifBalloon"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="NotifBalloon" Height="80" MinHeight="80" Width="218" MinWidth="218"
+        SizeToContent="Height" Topmost="True" Loaded="notifWnd_Loaded"
+        ShowInTaskbar="False" WindowStyle="None" AllowsTransparency="True" Background="Transparent">
+    <Window.Resources>
+        <LinearGradientBrush x:Key="BalloonBackground" StartPoint="0,0" EndPoint="0,1">
+            <GradientStop Color="#FFFFFFFF" Offset="0"/>
+            <GradientStop Color="#FFF7F7F7" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.Resources>
+    <Grid x:Name="mContent" Margin="8,15,8,8" SnapsToDevicePixels="True">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" Margin="0,14,0,0" Padding="12,9,12,10"
+                Background="{StaticResource BalloonBackground}"
+                BorderBrush="#FF777777" BorderThickness="1" CornerRadius="5">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="8" ShadowDepth="2" Opacity="0.3" Color="#FF000000"/>
+            </Border.Effect>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="42"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <TextBlock x:Name="title" Text="Title" Grid.Column="1" Margin="0,0,0,1"
+                           Foreground="#FF003399" FontSize="15" FontWeight="Normal"
+                           TextWrapping="NoWrap"/>
+                <Image x:Name="pic" Grid.RowSpan="2" HorizontalAlignment="Left"
+                       Height="32" Margin="0,2,0,0" VerticalAlignment="Top" Width="32"
+                       Stretch="Uniform"/>
+                <TextBlock x:Name="info" Text="Example Information" Grid.Row="1" Grid.Column="1"
+                           Margin="0,2,0,0" Foreground="#FF202020" FontSize="12"
+                           TextWrapping="Wrap"/>
+            </Grid>
+        </Border>
+
+        <Canvas Grid.Row="0" IsHitTestVisible="False" Panel.ZIndex="1" Margin="0,0,0,0">
+            <Path Data="M 0,15 L 8,0 L 29,15 Z" Width="29" Height="15"
+                  Fill="{StaticResource BalloonBackground}" Stroke="#FF777777" StrokeThickness="1"
+                  Canvas.Left="16" Canvas.Top="0"/>
+            <Rectangle Width="26" Height="2" Fill="#FFFFFFFF" Canvas.Left="17" Canvas.Top="14" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        </Canvas>
+    </Grid>
+</Window>

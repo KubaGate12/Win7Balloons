@@ -4,8 +4,8 @@ It's a project I started because here is not a single option to restore balloons
 
 Recommended to use with:
 - Windhawk
- - discord-balloon-notifs
- - legacy-balloon-notifications
+  - discord-balloon-notifs
+  - legacy-balloon-notifications
 - [ALTaleX531/OpenGlass](https://github.com/ALTaleX531/OpenGlass)
 - [vaporvance/aero10](https://github.com/vaporvance/aero10)
 
